@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+
 
 const LoginForm = ({ onLogin }) => {
+    const navigate = useNavigate();
+
     const [form, setForm] = useState({
         username: '', password: ''
     })
@@ -21,6 +25,7 @@ const LoginForm = ({ onLogin }) => {
             if (onLogin) {
                 onLogin(response.data.token, response.data.user_id)
             }
+            navigate('/')
         } catch (error) {
             setMessage("Login Failed")
         } finally {

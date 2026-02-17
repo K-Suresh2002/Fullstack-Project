@@ -21,6 +21,7 @@ const RegisterForm = () => {
             setMessage('Registration Successful! You can now login.')
             setMessageType('success')
             setForm({ username: '', email: '', password: '' })
+            window.location.href="/"
         } catch (error) {
             setMessage('Registration failed: ' + (error.response?.data?.username || error.message))
             setMessageType('error')

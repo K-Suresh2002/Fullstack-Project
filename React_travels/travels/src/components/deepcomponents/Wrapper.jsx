@@ -73,11 +73,17 @@
 //                                         <button className="
 
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Wrapper = ({ token, handleLogout, children }) => {
   const navigate = useNavigate()
+
+  useEffect(()=> {
+    if(!token && window.location.pathname !== '/login' &&window.location.pathname !== '/register') {
+      navigate('/login')
+    }
+  },[token, navigate])
 
   const logout = () => {
     handleLogout()
