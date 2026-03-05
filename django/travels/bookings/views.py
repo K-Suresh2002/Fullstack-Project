@@ -1,6 +1,7 @@
 
 
 #authincate, permissiom, token, status, response, generics, apiviews
+
 from django.contrib.auth import authenticate
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authtoken.models import Token
@@ -9,6 +10,7 @@ from rest_framework.views import APIView
 from .serializers import UserRegisterSerializer,BusSerializer,BookingSerializer
 from rest_framework.response import Response
 from .models import Bus,Seat,Booking
+
 
 
 class RegisterView(APIView):
@@ -75,6 +77,13 @@ class UserBookingView(APIView):
         bookings = Booking.objects.filter(user_id= user_id)
         serializer = BookingSerializer(bookings, many=True)
         return Response(serializer.data)
+    
+
+    
+    
+
+
+    
 
         
         
