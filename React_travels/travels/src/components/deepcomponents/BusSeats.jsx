@@ -14,7 +14,7 @@ const BusSeats = ({ token }) => {
     useEffect(() => {
         const fetchBusDetails = async () => {
             try {
-                const response = await axios(`http://127.0.0.1:8000/api/buses/${busId}`)
+                const response = await axios(`${import.meta.env.VITE_API_URL}/api/buses/${busId}`)
                 setBus(response.data)
                 setSeats(response.data.seats || [])
             } catch (error) {
@@ -36,7 +36,7 @@ const BusSeats = ({ token }) => {
         setSelectedSeat(seatId)
         
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/booking/",
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/booking/`,
                 { seat: seatId },
                 {
                     headers: {

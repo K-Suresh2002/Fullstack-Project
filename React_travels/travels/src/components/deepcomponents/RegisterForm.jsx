@@ -17,7 +17,7 @@ const RegisterForm = () => {
         e.preventDefault()
         setIsLoading(true)
         try {
-            await axios.post('http://localhost:8000/api/register/', form);
+            await axios.post(`${import.meta.env.VITE_API_URL}/api/register/`, form);
             setMessage('Registration Successful! You can now login.')
             setMessageType('success')
             setForm({ username: '', email: '', password: '' })
