@@ -65,6 +65,7 @@ MIDDLEWARE = [
 ]
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
+    'https://fullstack-project-c2x8-fvtx6oan6-k-suresh2002s-projects.vercel.app',
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
