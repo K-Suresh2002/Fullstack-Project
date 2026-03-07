@@ -15,7 +15,7 @@ const BusSeats = ({token}) => {
     useEffect(()=>{
         const fetchBusDetails = async()=>{
             try {
-                const response = await axios(`http://127.0.0.1:8000/api/buses/${busId}`)
+                const response = await axios(`https://fullstack-project-1-aqqj.onrender.com/api/buses/${busId}`)
                 setBus(response.data)
                 setSeats(response.data.seats || [])
             } catch (error) {
@@ -33,7 +33,7 @@ const BusSeats = ({token}) => {
             return
         }
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/booking/",
+            const response = await axios.post("https://fullstack-project-1-aqqj.onrender.com/api/booking/",
                 {seat:seatId},
                 {
                     headers:{
