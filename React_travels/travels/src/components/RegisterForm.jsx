@@ -14,7 +14,7 @@ const RegisterForm = () => {
     const handleSubmit =async(e)=>{
         e.preventDefault()
         try {
-            await axios.post('http://localhost:8000/api/register/',form);
+            await axios.post('https://fullstack-project-1-aqqj.onrender.com/api/register/',form);
             setMessage('Registration Successful')
         } catch(error){
             setMessage('Registration failed', + (error.response?.data?.username || error.message))

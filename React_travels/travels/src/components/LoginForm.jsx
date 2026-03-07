@@ -14,7 +14,7 @@ const LoginForm = ({onLogin}) => {
 const handleSubmit =async(e)=>{
     e.preventDefault()
     try {
-        const response = await axios.post('http://localhost:8000/api/login/',form);
+        const response = await axios.post('https://fullstack-project-1-aqqj.onrender.com/api/login/',form);
         setMessage('Login success')
 
         if (onLogin){
